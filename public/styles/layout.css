@@ -14,10 +14,13 @@ html {
  * Global layout stuff
  */
 
+ /* per mentor we can use the element as a selctor for the font and using ">" we can get more specific as to while nested element we want to target */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
