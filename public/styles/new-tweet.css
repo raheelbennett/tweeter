@@ -1,0 +1,36 @@
+.tweetForm {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.new-tweet label {
+  font-weight: bold;
+}
+
+.new-tweet textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #000000;
+}
+
+.new-tweet button {
+  background-color: #4056A1;
+  font-family: 'Bungee';
+  font-weight: lighter;
+  font-size: medium;
+  color: white;
+}
+
+.counter {
+  font-family: 'Bungee';
+  font-weight: lighter;
+  font-size: medium;
+}
+
+.below-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
