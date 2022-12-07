@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
   //with help from mentor. This is not my own code.
@@ -8,10 +6,11 @@ $(document).ready(function () {
     const remaining = 140 - counter;
     $(".counter").text(remaining)
 
+  //we can use js to handle the logic and create a temp class for css to use 
     if (remaining < 0) {
-      $(".counter").css("color", "red")
+      $(".counter").addClass("num-red")
     } else {
-      $(".counter").css("color", "black")
+      $(".counter").removeClass("num-red")
     }
 
   })

@@ -36,5 +36,7 @@
   padding: 5px;
 }
 
-
-
+/* this is the temoporary class created from composer-char-counter.js for when number of chars turns negative*/ 
+.num-red {
+  color: red;
+}
