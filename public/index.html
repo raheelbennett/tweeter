@@ -44,7 +44,7 @@
       </div>
     </div>
   </nav>
-  <header>
+  <header class="main-header">
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -57,7 +57,7 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets", method="POST", class="tweetForm">
+      <form action="/tweets" , method="POST" , class="tweetForm">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="below-text">
@@ -66,6 +66,30 @@
         </div>
       </form>
     </section>
+    <article class="tweet-container">
+      <header>
+        <div class="user">
+          <div>
+          <i class="fa-regular fa-user"></i>
+        </div>
+          <div>Newton</div>
+        </div>
+        <div>@SirIsaac</div>
+      </header>
+      <section class="text">
+        If I have seen further it is by standing on the shoulders of giants
+      </section>
+      <footer>
+        <div class="days">
+          10 days ago
+        </div>
+        <div class="hover-icons">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-repeat"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </footer>
+    </article>
   </main>
 </body>
 

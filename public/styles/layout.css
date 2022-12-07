@@ -23,6 +23,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 /*
@@ -30,8 +31,62 @@ body {
  */
 main {
   width: 90%;
+  height: 30em;
   margin-right: auto;
   margin-left: auto;
-  /* justify-content:center; */
   border-color: blue;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+
+.tweet-container {
+  border: 2px solid black;
+  height: 10em;
+  padding: 20px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+.tweet-container:hover { 
+  box-shadow: 0.3em 0.3em rgb(135, 135, 114);
+}
+
+.tweet-container header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 200;
+
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tweet-container footer {
+  border-top: 3px solid black;
+  padding-top: 10px;
+  height: 10px;
+  display: flex;
+  font-size: large;
+  justify-content: space-between;
+  
+}
+
+.hover-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fa-solid:hover {
+ color: rgb(169, 79, 10);
 }
