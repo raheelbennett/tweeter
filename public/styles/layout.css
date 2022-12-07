@@ -91,4 +91,5 @@ main {
 
 .fa-solid:hover {
  color: rgb(169, 79, 10);
+ cursor: pointer;
 }
