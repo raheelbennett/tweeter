@@ -6,42 +6,7 @@
 
 
 
-$(document).ready(function() {
-
-  //Add an event listener for submit on new tweet form and prevent its default behaviour.
-  $(".tweetForm").submit(function(event) { //check if i can change the name of event in the argument
-    event.preventDefault();
-    let data = $('form').serialize();
-    console.log(data);
-    })
-
-  //test data
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
+$(() => {
 
   //takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
   const createTweetElement = function(tweetData) {
@@ -82,7 +47,36 @@ $(document).ready(function() {
     });
   };
 
-  renderTweets(data);
+
+
+  //Add an event listener for submit on new tweet form and prevent its default behaviour.
+  //Use the jQuery library to submit a POST request that sends the serialized data to the server
+  $(".tweetForm").on("submit", function(event) {
+    event.preventDefault();
+    // let tweetText = $('form').serialize();
+    const tweetText = $(this).serialize();
+    $.ajax("/tweets", {
+      method: "POST",
+      data: tweetText
+    })
+      .then(() => {
+        $("#tweet-text").val("");
+      });
+  });
+
+
+  //The loadtweets function will use jQuery to make a request to /tweets and receive the array of tweets as JSON.
+  //Then we can just pass in the JSON response to the renderTweets functoin
+  const loadTweets = function() {
+    $.ajax("/tweets", { method: "GET" })
+      .then((response) => {
+        renderTweets(response);
+        console.log(typeof (response));
+
+      });
+  };
+
+  loadTweets();
+
 
 });
-
