@@ -53,6 +53,13 @@ $(() => {
   //Use the jQuery library to submit a POST request that sends the serialized data to the server
   $(".tweetForm").on("submit", function(event) {
     event.preventDefault();
+    const textbox = $("#tweet-text").val();
+    if (!textbox) {
+     return alert("Cannot submit an empty tweet");
+    }
+    if (textbox.length > 140) {
+      return alert("Maximum characters exceeded");
+    }
     // let tweetText = $('form').serialize();
     const tweetText = $(this).serialize();
     $.ajax("/tweets", {
@@ -71,7 +78,6 @@ $(() => {
     $.ajax("/tweets", { method: "GET" })
       .then((response) => {
         renderTweets(response);
-        console.log(typeof (response));
 
       });
   };
