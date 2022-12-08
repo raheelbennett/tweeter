@@ -43,11 +43,22 @@ $(() => {
   const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     });
   };
 
 
+ //The loadtweets function will use jQuery to make a request to /tweets and receive the array of tweets as JSON.
+  //Then we can just pass in the JSON response to the renderTweets functoin
+  const loadTweets = function() {
+    $.ajax("/tweets", { method: "GET" })
+      .then((response) => {
+        renderTweets(response);
+
+      });
+  };
+
+  loadTweets();
 
   //Add an event listener for submit on new tweet form and prevent its default behaviour.
   //Use the jQuery library to submit a POST request that sends the serialized data to the server
@@ -68,21 +79,12 @@ $(() => {
     })
       .then(() => {
         $("#tweet-text").val("");
+        loadTweets();
+
       });
   });
 
 
-  //The loadtweets function will use jQuery to make a request to /tweets and receive the array of tweets as JSON.
-  //Then we can just pass in the JSON response to the renderTweets functoin
-  const loadTweets = function() {
-    $.ajax("/tweets", { method: "GET" })
-      .then((response) => {
-        renderTweets(response);
-
-      });
-  };
-
-  loadTweets();
-
+ 
 
 });
