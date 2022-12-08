@@ -25,7 +25,7 @@ $(() => {
       </p>
       <footer>
         <div class="days">
-          ${tweetData.created_at}
+          ${timeago.format(tweetData.created_at)}
         </div>
         <div class="hover-icons">
           <i class="fa-solid fa-flag"></i>
