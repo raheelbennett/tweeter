@@ -16,12 +16,21 @@
   border-bottom: 3px solid #000000;
 }
 
-.new-tweet button {
+#btn {
   background-color: #4056A1;
   font-family: 'Bungee';
   font-weight: lighter;
   font-size: medium;
   color: white;
+  
+}
+#btn:active {
+   transform: translateY(4px);
+  box-shadow: 0 5px rgb(102, 102, 102);
+}
+#btn:hover {
+  background-color: rgb(10, 34, 169);
+  cursor: pointer;
 }
 
 .counter {
@@ -39,4 +48,15 @@
 /* this is the temoporary class created from composer-char-counter.js for when number of chars turns negative*/ 
 .num-red {
   color: red;
+}
+
+/* this is the temoporary class created from client.js for error messages during new tweet submission. 
+
+.error {
+  color: #c51244;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 0;
+  box-shadow: 1px 1px 1px
+  
 }

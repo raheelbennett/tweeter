@@ -41,8 +41,10 @@
   <nav>
     <span>tweeter</span>
     <div class="rightNav">
-      <div><b>Write</b>&nbspa new tweet
-        <div id="ddarrow"><i class="fa-solid fa-angles-down"></i>
+      <div>
+        <strong>Write</strong> <span> a new tweet</span>
+        <div id="ddarrow">
+          <i class="fa-solid fa-angles-down"></i>
         </div>
       </div>
     </div>
@@ -64,7 +66,8 @@
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="below-text">
-          <button type="submit">Tweet</button>
+          <button type="submit" id="btn">Tweet</button>
+          <section class="err"></section>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
