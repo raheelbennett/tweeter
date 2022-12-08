@@ -21,7 +21,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Source Sans Pro', sans-serif;
 
 }
@@ -33,7 +33,6 @@ main {
   width: 90%;
   margin-right: auto;
   margin-left: auto;
-  border-color: blue;
   margin-top: 0px;
   display: flex;
   flex-direction: column;
@@ -43,16 +42,15 @@ main {
 
 .tweet {
   border: 2px solid black;
-  height: 10em;
-  padding: 20px;
+  padding: 1em;
   font-weight: bolder;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  margin-right: 1em;
-  margin-left: 1em;
+  margin: 2em;
   border-radius: 10px;
 }
 
+.tweet .text {
+  margin: 1.5em;
+}
 
 .tweet:hover { 
   box-shadow: 0.3em 0.3em rgb(135, 135, 114);
@@ -62,9 +60,9 @@ main {
   display: flex;
   justify-content: space-between;
   font-weight: 200;
-
-
 }
+
+
 
 .user {
   display: flex;
@@ -72,10 +70,13 @@ main {
   gap: 10px;
 }
 
+.user img {
+  width: 1.5em;
+}
+
 .tweet footer {
   border-top: 3px solid black;
   padding-top: 10px;
-  height: 10px;
   display: flex;
   font-size: large;
   justify-content: space-between;

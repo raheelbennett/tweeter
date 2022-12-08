@@ -50,10 +50,10 @@
   color: red;
 }
 
-/* this is the temoporary class created from client.js for error messages during new tweet submission. 
+/* this is the temoporary class created from client.js for error messages during new tweet submission.*/ 
 
 .error {
-  color: #c51244;
+  color: red;
   font-weight: bold;
   padding: 10px;
   border-radius: 0;

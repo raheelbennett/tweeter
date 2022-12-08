@@ -10,7 +10,7 @@ $(() => {
 
   //takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
   const createTweetElement = function (tweetData) {
-     
+
     //function to escape some text typed in as a tween that can be malicious, and then use it inside .html() or $() 
     const escape = function (str) {
       let div = document.createElement("div");
@@ -23,9 +23,9 @@ $(() => {
     <header>
         <div class="user">
           <img src=${tweetData.user.avatars}>
-          <p>${tweetData.user.name}</p>
+          ${tweetData.user.name}
         </div>
-        <p>${tweetData.user.handle}</p>
+        ${tweetData.user.handle}
       </header>
       <p class="text">
         ${escape(tweetData.content.text)}
@@ -71,7 +71,7 @@ $(() => {
     $.ajax("/tweets", { method: "GET" })
       .then((response) => {
         const $tweet = createTweetElement(response[response.length - 1]);
-      $('#tweets-container').prepend($tweet)
+        $('#tweets-container').prepend($tweet)
       })
   }
 
@@ -83,19 +83,19 @@ $(() => {
     if (!textbox) {
       $(".err").text("Cannot submit an empty tweet");
       $(".err").addClass('error');
-      return setTimeout(()=> {
+      return setTimeout(() => {
         $(".err").removeClass('error');
         $(".err").text("");
-      },3000);
+      }, 3000);
     }
     else if (textbox.length > 140) {
       $(".err").text("Maximum characters exceeded");
       $(".err").addClass('error');
-      return setTimeout(()=> {
+      return setTimeout(() => {
         $(".err").removeClass('error');
         $(".err").text("");
-    },3000);
-    
+      }, 3000);
+
     }
     //let tweetText = $('form').serialize(); will also work 
     //upon successfully post new tweets will load on top without page refresh and textbox will clear as well.
@@ -107,7 +107,7 @@ $(() => {
       .then(() => {
         $("#tweet-text").val("");
         $(".counter").text("140");
-        displayLastTweet();      
+        displayLastTweet();
 
       });
   });
