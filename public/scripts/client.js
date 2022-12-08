@@ -6,7 +6,14 @@
 
 
 
-$(document).ready(function () {
+$(document).ready(function() {
+
+  //Add an event listener for submit on new tweet form and prevent its default behaviour.
+  $(".tweetForm").submit(function(event) { //check if i can change the name of event in the argument
+    event.preventDefault();
+    let data = $('form').serialize();
+    console.log(data);
+    })
 
   //test data
   const data = [
@@ -33,11 +40,11 @@ $(document).ready(function () {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
 
 
   //takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
-  const createTweetElement = function (tweetData) {
+  const createTweetElement = function(tweetData) {
 
     const $tweet = $(`
     <article class="tweet">
@@ -67,8 +74,8 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  //taking in an array of tweet objects and then appending each one to the #tweets-container 
-  const renderTweets = function (tweets) {
+  //taking in an array of tweet objects and then appending each one to the #tweets-container
+  const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').append($tweet);
