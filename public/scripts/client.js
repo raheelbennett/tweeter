@@ -67,6 +67,14 @@ $(() => {
 
   loadTweets();
 
+  const displayLastTweet = function () {
+    $.ajax("/tweets", { method: "GET" })
+      .then((response) => {
+        const $tweet = createTweetElement(response[response.length - 1]);
+      $('#tweets-container').prepend($tweet)
+      })
+  }
+
   //Add an event listener for submit on new tweet form and prevent its default behaviour.
   //Use the jQuery library to submit a POST request that sends the serialized data to the server
   $(".tweetForm").on("submit", function (event) {
@@ -79,7 +87,7 @@ $(() => {
       return alert("Maximum characters exceeded");
     }
     //let tweetText = $('form').serialize(); will also work 
-    //upon successfully post new tweets will load without page refresh and textbox will clear as well.
+    //upon successfully post new tweets will load on top without page refresh and textbox will clear as well.
     const tweetText = $(this).serialize();
     $.ajax("/tweets", {
       method: "POST",
@@ -87,7 +95,8 @@ $(() => {
     })
       .then(() => {
         $("#tweet-text").val("");
-        loadTweets();
+        $(".counter").text("140");
+        displayLastTweet();      
 
       });
   });
