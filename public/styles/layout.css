@@ -50,9 +50,7 @@ main {
   margin-bottom: 2em;
   margin-right: 1em;
   margin-left: 1em;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  border-radius: 10px;
 }
 
 
