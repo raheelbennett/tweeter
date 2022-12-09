@@ -9,10 +9,10 @@
 $(() => {
 
   //takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
-  const createTweetElement = function (tweetData) {
+  const createTweetElement = function(tweetData) {
 
-    //function to escape some text typed in as a tween that can be malicious, and then use it inside .html() or $() 
-    const escape = function (str) {
+    //function to escape some text typed in as a tween that can be malicious, and then use it inside .html() or $()
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -47,7 +47,7 @@ $(() => {
   };
 
   //taking in an array of tweet objects and then appending each one to the #tweets-container
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
@@ -57,7 +57,7 @@ $(() => {
 
   //The loadtweets function will use jQuery to make a request to /tweets and receive the array of tweets as JSON.
   //Then we can just pass in the JSON response to the renderTweets functoin
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax("/tweets", { method: "GET" })
       .then((response) => {
         renderTweets(response);
@@ -67,17 +67,17 @@ $(() => {
 
   loadTweets();
 
-  const displayLastTweet = function () {
+  const displayLastTweet = function() {
     $.ajax("/tweets", { method: "GET" })
       .then((response) => {
         const $tweet = createTweetElement(response[response.length - 1]);
-        $('#tweets-container').prepend($tweet)
-      })
-  }
+        $('#tweets-container').prepend($tweet);
+      });
+  };
 
   //Add an event listener for submit on new tweet form and prevent its default behaviour.
   //Use the jQuery library to submit a POST request that sends the serialized data to the server
-  $(".tweetForm").on("submit", function (event) {
+  $(".tweetForm").on("submit", function(event) {
     event.preventDefault();
     const textbox = $("#tweet-text").val().trim();
     if (!textbox) {
@@ -87,8 +87,7 @@ $(() => {
         $(".err").removeClass('error');
         $(".err").text("");
       }, 3000);
-    }
-    else if (textbox.length > 140) {
+    } else if (textbox.length > 140) {
       $(".err").text("Maximum characters exceeded");
       $(".err").addClass('error');
       return setTimeout(() => {
@@ -97,7 +96,7 @@ $(() => {
       }, 3000);
 
     }
-    //let tweetText = $('form').serialize(); will also work 
+    //let tweetText = $('form').serialize(); will also work
     //upon successfully post new tweets will load on top without page refresh and textbox will clear as well.
     const tweetText = $(this).serialize();
     $.ajax("/tweets", {

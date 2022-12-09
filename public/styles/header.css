@@ -1,5 +1,7 @@
+/* Mobile Styles */
 .main-header {
   display: flex;
+  padding: 2em;
   height: 520px;
   color: white;
   flex-direction: column;
@@ -10,8 +12,10 @@
 }
 
 
-/*Desktop*/
+/* Responsive design for Desktop*/
 @media screen and (min-width: 1024px) {
-  
-
+  .main-header {
+    width: 40%;
+    margin: 300px 4em;
+  }
 }
