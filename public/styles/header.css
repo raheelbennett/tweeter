@@ -8,3 +8,10 @@
   background-color: #9e006c;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 }
+
+
+/*Desktop*/
+@media screen and (min-width: 1024px) {
+  
+
+}
