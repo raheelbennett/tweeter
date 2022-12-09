@@ -16,3 +16,17 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser 1.15.2
+- chance 1.0.2
+- md5 2.1.0
+
+## What to expect:
+
+- The current version "1.0.1" of Tweeter has functioning server side code and a demo of client-side app UI.
+- The app has responsive design for desktop and mobile interface.
+- New tweets can be submitted and will post, along with initial sample tweets, with random user information for demo.
+- The new tweets will post on the top without the need to refresh the app.
+- There is no database linked so if the server is restarted any posted tweets will be deleted.
+- If the browser is refreshed the tweets will not be lost.
+- The app has error validation for empty tweet submission or tweets exceeding 140 characters.
+- The app also has protection against Cross-Site Scripting (XSS).
