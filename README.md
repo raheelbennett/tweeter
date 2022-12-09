@@ -34,8 +34,13 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 !["Screenshot of desktop home page"](https://github.com/raheelbennett/tweeter/blob/master/docs/Desktop-Home-Page.PNG?raw=true)
+
 !["Screenshot of mobile home page](https://github.com/raheelbennett/tweeter/blob/master/docs/Mobile-Home-Page.PNG?raw=true)
+
 !["Screenshot of dynamic character count"](https://github.com/raheelbennett/tweeter/blob/master/docs/Character-Counter.PNG?raw=true)
+
 !["Screenshot of chracters exeeding"](https://github.com/raheelbennett/tweeter/blob/master/docs/Characters-Exceeded.PNG?raw=true)
+
 !["Screenshot of error validation for max charcters"](https://github.com/raheelbennett/tweeter/blob/master/docs/Error-Validation.PNG?raw=true)
+
 !["Screenshot of error validation for empty tweet"](https://github.com/raheelbennett/tweeter/blob/master/docs/Error-Validation-2-Mobile.PNG?raw=true)
